@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {NewPlayerStartComponent} from './new-player-start/new-player-start.component';
 import {IntroductionComponent} from './introduction/introduction.component';
 import { HelpComponent } from './help/help.component';
+import { TileDetailComponent } from './tile-detail/tile-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -12,6 +13,10 @@ const appRoutes: Routes = [
   {
     path: 'intro',
     component: IntroductionComponent
+  },
+  {
+    path: 'tiles/:id',
+    component: TileDetailComponent
   }
  ];
 

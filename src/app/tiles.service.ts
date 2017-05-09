@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Tile} from './tile.model';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 
 @Injectable()
@@ -10,8 +10,21 @@ export class TilesService {
 
   constructor(private database: AngularFireDatabase) {
     this.tiles = database.list('/tiles');
-    this.tiles.subscribe(tiles => console.log(tiles));
-
   }
+
+  getAllTiles () {
+    return this.tiles;
+  }
+
+  getThisTile (coordinate){
+    const queryOneTile = this.database.list('/tiles', {
+      query: {
+        orderByChild: 'coordinates',
+        equalTo: coordinate
+      }
+    });
+    return queryOneTile;
+  }
+
 
 }

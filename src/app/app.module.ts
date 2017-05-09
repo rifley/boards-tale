@@ -13,6 +13,8 @@ import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import {TilesService} from './tiles.service';
+import { TileListComponent } from './tile-list/tile-list.component';
+import { TileDetailComponent } from './tile-detail/tile-detail.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -27,7 +29,9 @@ export const firebaseConfig = {
     AppComponent,
     NewPlayerStartComponent,
     IntroductionComponent,
-    HelpComponent
+    HelpComponent,
+    TileListComponent,
+    TileDetailComponent
   ],
   imports: [
     CovalentCoreModule,
