@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { routing } from '../app.routing';
-
-
+import {Tile} from '../tile.model';
+import {TilesService} from '../tiles.service';
 
 @Component({
   selector: 'app-introduction',
@@ -10,7 +10,7 @@ import { routing } from '../app.routing';
 })
 export class IntroductionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private tileService: TilesService) { }
 
   ngOnInit() {
     console.log(JSON.parse(localStorage.getItem('newPlayer')));

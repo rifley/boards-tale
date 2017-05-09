@@ -1,0 +1,26 @@
+{ "tiles": [
+  {
+    "title": "Home",
+    "image": "#",
+    "description": "beautiful day ",
+    "events":["Event 1"],
+    "directions": ["North", "South", "East", "West"],
+    "coordinates": {
+      "xC": 2,
+      "yC": 2
+    }
+  },
+  {
+    "title": "Hills",
+    "image": "#",
+    "description": "Hills are alive...",
+    "events":["Event 2"],
+    "directions": ["North", "South", "West"],
+    "coordinates": {
+      "xC": 3,
+      "yC": 2
+    }
+  }
+]
+
+}
