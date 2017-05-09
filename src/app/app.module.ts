@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CovalentCoreModule } from '@covalent/core';
 import { AppComponent } from './app.component';
@@ -17,6 +17,7 @@ import { NewPlayerStartComponent } from './new-player-start/new-player-start.com
     CovalentCoreModule,
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     BrowserAnimationsModule
   ],

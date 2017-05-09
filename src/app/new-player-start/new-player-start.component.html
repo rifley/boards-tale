@@ -1,1 +1,12 @@
 <h1> {{title}}</h1>
+  <form [formGroup]="playerForm">
+  <div layout="row" layout-margin layout-align="space-between center">
+    <md-input-container flex>
+      <input type="text" mdInput placeholder="player name" formControlName="name">
+    </md-input-container>
+  </div>
+
+  <div layout="row" layout-margin layout-align="center center">
+    <button flex='70' md-raised-button color="accent" class="text-upper" (click)="startGame()">Start Your Tale!</button>
+  </div>
+</form>
