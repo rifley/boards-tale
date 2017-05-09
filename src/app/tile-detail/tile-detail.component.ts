@@ -31,14 +31,8 @@ export class TileDetailComponent implements OnInit {
 
   exploreSurroundings(direction){
     if (direction ==="East"){
-      // this.route.params.forEach((urlParameters)=>{
-        var coordinateArrayString = this.tileCoordinate.split("");
-        var changeXCoordinate = (parseInt(coordinateArrayString[0])+1).toString();
-        coordinateArrayString.splice(0,1,changeXCoordinate);
-        this.headingToCoordinate = coordinateArrayString.join('');
-      // });
+      this.headingToCoordinate = (parseInt(this.tileCoordinate)+10).toString();
       this.router.navigate(['tiles',this.headingToCoordinate]);
-
     }
 
   }
