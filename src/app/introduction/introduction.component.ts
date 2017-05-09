@@ -16,7 +16,7 @@ export class IntroductionComponent implements OnInit {
   ngOnInit() {
     this.tileService.getAllTiles().subscribe((tiles) => {
       this.tiles=tiles;
-      console.log(tiles[0].title);
+      
     });
 
   }

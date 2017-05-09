@@ -19,10 +19,11 @@ export class TilesService {
   getThisTile (coordinate){
     const queryOneTile = this.database.list('/tiles', {
       query: {
-        orderByChild: 'coordinates',
+        orderByChild: 'xyString',
         equalTo: coordinate
       }
     });
+
     return queryOneTile;
   }
 

@@ -12,18 +12,35 @@ import { Router } from '@angular/router';
 })
 export class TileDetailComponent implements OnInit {
   tileCoordinate: string;
-  tile: Tile[];
+  tile: Tile;
+  directions: string [];
+  headingToCoordinate: string;
 
-  constructor(private tileService: TilesService, private route: ActivatedRoute) { }
+  constructor(private tileService: TilesService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.route.params.forEach((urlParameters)=>{
-      this.tileCoordinate = urlParameters ['id'];
+    this.route.params.subscribe((urlParameters)=>{
+      this.tileCoordinate =urlParameters ['id'];
+      this.tileService.getThisTile(this.tileCoordinate).subscribe((tile)=>{
+        this.tile=tile[0];
+        this.directions = this.tile.directions;
+          });
     });
-    this.tileService.getThisTile(this.tileCoordinate).subscribe((tile)=>{
-      this.tile = tile;
-      console.log(this.tile);
-    });
+
+  }
+
+  exploreSurroundings(direction){
+    if (direction ==="East"){
+      // this.route.params.forEach((urlParameters)=>{
+        var coordinateArrayString = this.tileCoordinate.split("");
+        var changeXCoordinate = (parseInt(coordinateArrayString[0])+1).toString();
+        coordinateArrayString.splice(0,1,changeXCoordinate);
+        this.headingToCoordinate = coordinateArrayString.join('');
+      // });
+      this.router.navigate(['tiles',this.headingToCoordinate]);
+
+    }
+
   }
 
 }

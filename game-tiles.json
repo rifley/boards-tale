@@ -5,7 +5,7 @@
     "description": "beautiful day ",
     "events":["Event 1"],
     "directions": ["North", "South", "East", "West"],
-    "coordinates": 5
+    "xyString": "22"
   },
   {
     "title": "Hills",
@@ -13,7 +13,7 @@
     "description": "Hills are alive...",
     "events":["Event 2"],
     "directions": ["North", "South", "West"],
-    "coordinates": 6
+    "xyString": "32"
   }
 ]
 
