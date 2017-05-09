@@ -13,7 +13,6 @@ export class IntroductionComponent implements OnInit {
   constructor(private tileService: TilesService) { }
 
   ngOnInit() {
-    console.log(JSON.parse(localStorage.getItem('newPlayer')));
   }
 
 }

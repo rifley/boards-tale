@@ -9,8 +9,9 @@ export class TilesService {
 
 
   constructor(private database: AngularFireDatabase) {
-    this.tiles = database.list('tiles');
-    console.log(this.tiles);
+    this.tiles = database.list('/tiles');
+    this.tiles.subscribe(tiles => console.log(tiles));
+
   }
 
 }
