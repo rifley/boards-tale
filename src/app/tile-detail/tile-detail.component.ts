@@ -20,6 +20,7 @@ export class TileDetailComponent implements OnInit {
   currentPlayer: Player;
   playerDBId: string;
   currentEvent: any;
+  didItHappen: boolean;
 
   constructor(private tileService: TilesService, private route: ActivatedRoute, private router: Router) { }
 
@@ -32,10 +33,10 @@ export class TileDetailComponent implements OnInit {
         this.currentEvent = this.tile.events;
         this.tileCoordinate = this.tile.xyString;
         this.directions = this.tile.directions;
+        this.didItHappen = this.tile.didItHappen;
 // getting player informaiton
         this.tileService.getPlayer().subscribe((player)=>{
         this.currentPlayer = player[0];
-
       });
     });
     });
@@ -46,7 +47,9 @@ checkEvent (){
   if(this.currentEvent.hpChange !== undefined){
   this.currentPlayer.hp = this.currentPlayer.hp + this.currentEvent.hpChange;
   this.tileService.updatePlayer(this.currentPlayer);
+  this.tileService.eventHappened(this.tile);
   }
+
 }
 
   exploreHelper (value){

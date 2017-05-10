@@ -19,10 +19,6 @@ export class TilesService {
     this.player.push(newPlayer);
   }
 
-  getAllTiles () {
-    return this.tiles;
-  }
-
   deleteAllPlayers() {
     this.player.remove();
   }
@@ -38,11 +34,21 @@ export class TilesService {
 
   updatePlayer(updatedPlayer){
     var playerInFirebase = this.getPlayerByID(updatedPlayer.$key);
-    playerInFirebase.update({name: updatedPlayer.name,
-                              hp: updatedPlayer.hp,
-                              score: updatedPlayer.score});
+    playerInFirebase.update({hp: updatedPlayer.hp,});
   }
 
+  eventHappened (tile) {
+    var tileToChange = this.getTileByID(tile.$key);
+    tileToChange.update({didItHappen: true,});
+  }
+
+  getAllTiles () {
+    return this.tiles;
+  }
+
+  getTileByID (tileKey){
+    return this.database.object('tiles/'+tileKey);
+  }
 
   getTileByName (name){
     const queryOneTile = this.database.list('/tiles', {
@@ -64,6 +70,5 @@ export class TilesService {
     });
     return queryOneTile;
   }
-
 
 }

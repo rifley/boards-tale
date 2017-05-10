@@ -5,4 +5,4 @@
 <p> {{tile?.events.title}} </p>
 
 <h3 (click)="exploreSurroundings(direction)" *ngFor="let direction of directions"> {{direction}}</h3>
-<button class="btn" (click)="checkEvent()"> Explore Your Surroundings </button>
+<button class="btn" *ngIf="!didItHappen" (click)="checkEvent()"> Explore Your Surroundings </button>
