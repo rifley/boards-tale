@@ -3,6 +3,7 @@ import { routing } from '../app.routing';
 import {Tile} from '../tile.model';
 import {TilesService} from '../tiles.service';
 import { Router } from '@angular/router';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'tile-list',

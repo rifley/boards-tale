@@ -3,7 +3,7 @@
     "title": "Home",
     "image": "#",
     "description": "beautiful day ",
-    "events":["Event 1"],
+    "events":{"title":"Event 1", "description":"No place like home", "hpChange":0},
     "directions": ["North", "South", "East", "West"],
     "xyString": "22"
   },

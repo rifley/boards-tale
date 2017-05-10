@@ -28,7 +28,21 @@ export class TilesService {
   }
 
   getPlayer (){
-    return this.database.object('/player');
+    return this.database.object('player/');
+  }
+
+
+  getPlayerByID (playerDBId){
+    return this.database.object('player/'+playerDBId);
+  }
+
+  updatePlayer(updatedPlayer, playerDBId){
+    var playerInFirebase = this.getPlayerByID(playerDBId);
+
+    console.log(playerInFirebase);
+    playerInFirebase.update({name: updatedPlayer.name,
+                              hp: updatedPlayer.hp,
+                              score: updatedPlayer.score});
   }
 
 
