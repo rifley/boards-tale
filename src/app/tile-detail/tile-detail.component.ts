@@ -4,6 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import {Tile} from '../tile.model';
 import {TilesService} from '../tiles.service';
 import { Router } from '@angular/router';
+import {Player} from '../player.model';
 
 @Component({
   selector: 'app-tile-detail',
@@ -15,6 +16,7 @@ export class TileDetailComponent implements OnInit {
   tile: Tile;
   directions: string [];
   headingToCoordinate: string;
+  currentPlayer: Player;
 
   constructor(private tileService: TilesService, private route: ActivatedRoute, private router: Router) { }
 
@@ -24,6 +26,7 @@ export class TileDetailComponent implements OnInit {
       this.tileService.getThisTile(this.tileCoordinate).subscribe((tile)=>{
         this.tile=tile[0];
         this.directions = this.tile.directions;
+        this.currentPlayer= JSON.parse(localStorage.getItem('newPlayer'));
           });
     });
 
@@ -34,6 +37,11 @@ export class TileDetailComponent implements OnInit {
       this.headingToCoordinate = (parseInt(this.tileCoordinate)+10).toString();
       this.router.navigate(['tiles',this.headingToCoordinate]);
     }
+    if (direction ==="West"){
+      this.headingToCoordinate = (parseInt(this.tileCoordinate)-10).toString();
+      this.router.navigate(['tiles',this.headingToCoordinate]);
+    }
+
 
   }
 

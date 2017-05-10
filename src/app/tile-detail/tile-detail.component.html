@@ -1,4 +1,4 @@
 
-<h1> I'm on tile {{tile?.title}}</h1>
+<h1> {{currentPlayer.name}}, you are at {{tile?.title}}</h1>
 
 <h3 (click)="exploreSurroundings(direction)" *ngFor="let direction of directions"> {{direction}}</h3>
