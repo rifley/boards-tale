@@ -7,7 +7,7 @@ import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable }
 @Injectable()
 export class TilesService {
   tiles: FirebaseListObservable<any []>;
-  player: FirebaseListObservable<any []>;
+  player: FirebaseListObservable<any>;
 
 
   constructor(private database: AngularFireDatabase) {
@@ -28,7 +28,7 @@ export class TilesService {
   }
 
   getPlayer (){
-    return this.database.object('player/');
+    return this.player;
   }
 
 
@@ -36,8 +36,8 @@ export class TilesService {
     return this.database.object('player/'+playerDBId);
   }
 
-  updatePlayer(updatedPlayer, playerDBId){
-    var playerInFirebase = this.getPlayerByID(playerDBId);
+  updatePlayer(updatedPlayer){
+    var playerInFirebase = this.getPlayerByID(updatedPlayer.$key);
     playerInFirebase.update({name: updatedPlayer.name,
                               hp: updatedPlayer.hp,
                               score: updatedPlayer.score});

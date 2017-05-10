@@ -33,29 +33,19 @@ export class TileDetailComponent implements OnInit {
         this.tileCoordinate = this.tile.xyString;
         this.directions = this.tile.directions;
 // getting player informaiton
-        console.log("no subscribe", this.tileService.getPlayer());
         this.tileService.getPlayer().subscribe((player)=>{
-        console.log("with subscribe", player);
-        this.playerDBId = Object.keys(player)[0];
-        this.currentPlayer = player[this.playerDBId];
+        this.currentPlayer = player[0];
+
       });
     });
     });
-    //resolve events
   }
 
 checkEvent (){
-this.tileService.getPlayerByID(this.playerDBId).subscribe((player)=>{
-  console.log("get payer by ID",player);
-});
-
-//hmmmm... can get player simply because only one...but now can get by key ID as well. Might be better to always grab by ID.  When player is first saved, ID is generated. Since only player, grab out of DB and save the Key value in session.   Then use Key value in session as future Db query for update player.
-
-// After entering name to start game, there will need to be 2 queries.... 1) to grab the player "list" object of 1.  2) Then get the Key and store in session.  3) Then grab the player using ID.
 
   if(this.currentEvent.hpChange !== undefined){
   this.currentPlayer.hp = this.currentPlayer.hp + this.currentEvent.hpChange;
-  this.tileService.updatePlayer(this.currentPlayer, this.playerDBId );
+  this.tileService.updatePlayer(this.currentPlayer);
   }
 }
 
