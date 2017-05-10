@@ -26,12 +26,18 @@ export class TileDetailComponent implements OnInit {
     this.route.params.subscribe((urlParameters)=>{
       this.searchString =urlParameters ['id'];
       this.tileService.getTileByName(this.searchString).subscribe((tile)=>{
+//setting all tile attributes
         this.tile=tile[0];
+        this.currentEvent = this.tile.events;
         this.tileCoordinate = this.tile.xyString;
         this.directions = this.tile.directions;
-        this.currentPlayer= JSON.parse(localStorage.getItem('newPlayer')).newPlayer;
-        this.currentEvent = this.tile.events;
-          });
+// getting player informaiton
+        this.tileService.getPlayer().subscribe((player)=>{          
+        var playerID: string = Object.keys(player)[0];
+        this.currentPlayer = player[playerID];
+        console.log(this.currentPlayer);
+      });
+    });
     });
   }
 

@@ -20,12 +20,12 @@ export class NewPlayerStartComponent implements OnInit {
   ngOnInit() {
     this.playerForm = this.fb.group({
       name:'',
-    })
+    });
+    this.tileService.deleteAllPlayers();
   }
 
   startGame(){
     var newPlayer: Player = new Player (this.playerForm.value.name);
-    console.log(newPlayer);
     this.tileService.addPlayer(newPlayer);
     this.playerForm.reset();
     this.router.navigate(['tiles', 'Home']);

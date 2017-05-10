@@ -23,6 +23,15 @@ export class TilesService {
     return this.tiles;
   }
 
+  deleteAllPlayers() {
+    this.player.remove();
+  }
+
+  getPlayer (){
+    return this.database.object('/player');
+  }
+
+
   getTileByName (name){
     const queryOneTile = this.database.list('/tiles', {
       query: {

@@ -16,8 +16,9 @@ export class IntroductionComponent implements OnInit {
   ngOnInit() {
     this.tileService.getAllTiles().subscribe((tiles) => {
       this.tiles=tiles;
-      
+
     });
+    this.tileService.deleteAllPlayers();
 
   }
 
