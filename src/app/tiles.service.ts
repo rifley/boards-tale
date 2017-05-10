@@ -16,14 +16,24 @@ export class TilesService {
     return this.tiles;
   }
 
-  getThisTile (coordinate){
+  getTileByName (name){
+    const queryOneTile = this.database.list('/tiles', {
+      query: {
+        orderByChild: 'title',
+        equalTo: name
+      }
+    });
+
+    return queryOneTile;
+  }
+
+  getTileByCoordinate(coordinate){
     const queryOneTile = this.database.list('/tiles', {
       query: {
         orderByChild: 'xyString',
         equalTo: coordinate
       }
     });
-
     return queryOneTile;
   }
 

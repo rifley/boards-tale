@@ -12,6 +12,7 @@ import {Player} from '../player.model';
   styleUrls: ['./tile-detail.component.css']
 })
 export class TileDetailComponent implements OnInit {
+  searchString: string;
   tileCoordinate: string;
   tile: Tile;
   directions: string [];
@@ -22,27 +23,35 @@ export class TileDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((urlParameters)=>{
-      this.tileCoordinate =urlParameters ['id'];
-      this.tileService.getThisTile(this.tileCoordinate).subscribe((tile)=>{
+      this.searchString =urlParameters ['id'];
+      this.tileService.getTileByName(this.searchString).subscribe((tile)=>{
         this.tile=tile[0];
+        this.tileCoordinate = this.tile.xyString;
         this.directions = this.tile.directions;
         this.currentPlayer= JSON.parse(localStorage.getItem('newPlayer'));
           });
     });
+  }
 
+  exploreHelper (value){
+    this.headingToCoordinate = (parseInt(this.tileCoordinate)+value).toString();
+    this.tileService.getTileByCoordinate(this.headingToCoordinate).subscribe((tile)=>{
+    this.router.navigate(['tiles',tile[0].title]);
+    })
   }
 
   exploreSurroundings(direction){
     if (direction ==="East"){
-      this.headingToCoordinate = (parseInt(this.tileCoordinate)+10).toString();
-      this.router.navigate(['tiles',this.headingToCoordinate]);
+      this.exploreHelper(10);
     }
     if (direction ==="West"){
-      this.headingToCoordinate = (parseInt(this.tileCoordinate)-10).toString();
-      this.router.navigate(['tiles',this.headingToCoordinate]);
+      this.exploreHelper(-10);
     }
-
-
+    if (direction ==="North"){
+      this.exploreHelper(-1);
+    }
+    if (direction ==="South"){
+      this.exploreHelper(1);
+    }
   }
-
 }

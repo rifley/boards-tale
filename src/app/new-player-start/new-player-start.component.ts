@@ -26,7 +26,7 @@ export class NewPlayerStartComponent implements OnInit {
     var newPlayer: Player = new Player (this.playerForm.value.name);
     localStorage.setItem('newPlayer', JSON.stringify({name: newPlayer.name}));
     this.playerForm.reset();
-    this.router.navigate(['tiles', '22']);
+    this.router.navigate(['tiles', 'Home']);
 
   }
 

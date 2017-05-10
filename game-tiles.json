@@ -8,12 +8,36 @@
     "xyString": "22"
   },
   {
-    "title": "Hills",
+    "title": "the Flat Hills",
     "image": "#",
     "description": "Hills are alive...",
     "events":["Event 2"],
-    "directions": ["North", "South", "West"],
+    "directions": ["West"],
     "xyString": "32"
+  },
+  {
+    "title": "the Brittle Forest",
+    "image": "#",
+    "description": "Hills are alive...",
+    "events":["Event 2"],
+    "directions": ["East"],
+    "xyString": "12"
+  },
+  {
+    "title": "the City Of WaterDeep ",
+    "image": "#",
+    "description": "Hills are alive...",
+    "events":["Event 2"],
+    "directions": ["South"],
+    "xyString": "21"
+  },
+  {
+    "title": "the Shores Of Smoke ",
+    "image": "#",
+    "description": "Hills are alive...",
+    "events":["Event 2"],
+    "directions": ["North"],
+    "xyString": "23"
   }
 ]
 
