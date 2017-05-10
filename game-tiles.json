@@ -11,7 +11,7 @@
     "title": "the Flat Hills",
     "image": "#",
     "description": "Hills are alive...",
-    "events":["Event 2"],
+    "events":{"title": "TestEvent1", "description":"You lose a leg", "hpChange":-10},
     "directions": ["West"],
     "xyString": "32"
   },

@@ -18,6 +18,7 @@ export class TileDetailComponent implements OnInit {
   directions: string [];
   headingToCoordinate: string;
   currentPlayer: Player;
+  currentEvent: any;
 
   constructor(private tileService: TilesService, private route: ActivatedRoute, private router: Router) { }
 
@@ -28,7 +29,8 @@ export class TileDetailComponent implements OnInit {
         this.tile=tile[0];
         this.tileCoordinate = this.tile.xyString;
         this.directions = this.tile.directions;
-        this.currentPlayer= JSON.parse(localStorage.getItem('newPlayer'));
+        this.currentPlayer= JSON.parse(localStorage.getItem('newPlayer')).newPlayer;
+        this.currentEvent = this.tile.events;
           });
     });
   }
