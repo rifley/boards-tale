@@ -33,12 +33,11 @@ export class TileDetailComponent implements OnInit {
         this.tileCoordinate = this.tile.xyString;
         this.directions = this.tile.directions;
 // getting player informaiton
+        console.log("no subscribe", this.tileService.getPlayer());
         this.tileService.getPlayer().subscribe((player)=>{
-        console.log("grabbing player on load of tile", player);
+        console.log("with subscribe", player);
         this.playerDBId = Object.keys(player)[0];
         this.currentPlayer = player[this.playerDBId];
-        this.checkEvent ();
-
       });
     });
     });

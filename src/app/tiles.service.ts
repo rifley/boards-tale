@@ -38,8 +38,6 @@ export class TilesService {
 
   updatePlayer(updatedPlayer, playerDBId){
     var playerInFirebase = this.getPlayerByID(playerDBId);
-
-    console.log(playerInFirebase);
     playerInFirebase.update({name: updatedPlayer.name,
                               hp: updatedPlayer.hp,
                               score: updatedPlayer.score});
