@@ -5,6 +5,7 @@ import {Tile} from '../tile.model';
 import {TilesService} from '../tiles.service';
 import { Router } from '@angular/router';
 import {Player} from '../player.model';
+import {EventPopUpComponent} from '../event-pop-up/event-pop-up.component'
 
 @Component({
   selector: 'app-tile-detail',
@@ -21,6 +22,7 @@ export class TileDetailComponent implements OnInit {
   playerDBId: string;
   currentEvent: any;
   didItHappen: boolean;
+  eventResolved: boolean = false;
 
   constructor(private tileService: TilesService, private route: ActivatedRoute, private router: Router) { }
 
@@ -38,6 +40,7 @@ export class TileDetailComponent implements OnInit {
 // getting player informaiton
         var getPlayerSubscribe = this.tileService.getPlayer().subscribe((player)=>{
         this.currentPlayer = player[0];
+        this.eventResolved = false;
       });
     });
     });
@@ -49,6 +52,7 @@ checkEvent (){
   this.currentPlayer.hp = this.currentPlayer.hp + this.currentEvent.hpChange;
   this.tileService.updatePlayer(this.currentPlayer);
   this.tileService.eventHappened(this.tile);
+  this.eventResolved = true;
   }
 
 }

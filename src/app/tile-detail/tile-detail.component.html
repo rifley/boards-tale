@@ -1,13 +1,29 @@
 
-<h1> {{currentPlayer?.name}}, you are at {{tile?.title}}</h1>
-<h3> You have {{currentPlayer?.hp}} hit points </h3>
+<div layout="row">
+  <div flex="30"><h1> {{currentPlayer?.name}}, you are at {{tile?.title}}</h1>
+  <h3> You have {{currentPlayer?.hp}} hit points </h3>
+    <div class="flex-container" id="exploreBar">
+      <button md-raised-button [id]="direction" color="accent" class="flexButton" (click)="exploreSurroundings(direction)" *ngFor="let direction of directions" > <md-icon  >arrow_forward</md-icon></button>
+    </div>
+  </div>
+  <div flex>
+    <md-card class="example-card">
+    <md-card-header>
+      <div md-card-avatar class="example-header-image"></div>
+      <md-card-title>{{tile?.title}}</md-card-title>
+      <md-card-subtitle></md-card-subtitle>
+    </md-card-header>
+    <img md-card-image src="{{tile?.image}}">
+    <md-card-content>
+      <h3>
+        {{tile?.description}}
+      </h3>
+    </md-card-content>
+    <md-card-actions>
+    <button md-raised-button color="warn" class="btn" *ngIf="!didItHappen && tile?.title !== 'Home'" (click)="checkEvent()"> Explore Your Surroundings </button>
+    </md-card-actions>
+  </md-card>
+  <h1 *ngIf="eventResolved"> Show after event has resolved</h1>
 
-<p> {{tile?.events.description}} </p>
-
-<!-- <button (click)="exploreSurroundings(tile?.directions[0])" *ngIf="tile?.directions[0] === 'North'"> {{tile?.directions[0]}}</button> -->
-
-<div class="flex-container" id="exploreBar">
-  <button md-raised-button [id]="direction" color="accent" class="flexButton" (click)="exploreSurroundings(direction)" *ngFor="let direction of directions" > <md-icon  >arrow_forward</md-icon></button>
+  </div>
 </div>
-
-<button class="btn" *ngIf="!didItHappen && tile?.title !== 'Home'" (click)="checkEvent()"> Explore Your Surroundings </button>

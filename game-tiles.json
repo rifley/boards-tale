@@ -1,7 +1,7 @@
 { "tiles": [
   {
     "title": "Home",
-    "image": "#",
+    "image": "../../assets/images/home.jpg",
     "description": "You wake up to the smell of roasting apples. To the North you see the open field you have spent many days in with your children, enjoying the long green grass etc. To the West you see an old bear sleeping off a hard days eating. To the South you notice a snake having a particularly difficult time eating a banana. To the East you notice a fire and hear screaming. Make your decision!",
     "didItHappen":true,
     "events":{"title":"Event 1", "description":"Head somewhere!", "hpChange":0},
@@ -10,7 +10,7 @@
   },
   {
     "title": "The Flat Cave",
-    "image": "#",
+    "image": "../../assets/images/home.jpg",
     "description": "North is riddle and wings, West is home, South is Sword",
     "didItHappen":false,
     "events":{"title": "TestEvent1", "description":"Attack the bear", "hpChange":-10},
@@ -19,7 +19,7 @@
   },
   {
     "title": "Burning Town",
-    "image": "#",
+    "image": "../../assets/images/home.jpg",
     "description": "North is tree and health, south is child, East is home",
     "didItHappen":false,
     "events":{"title": "Boss Battle", "description": "Attack the boss", "hpChange":-100},
@@ -28,7 +28,7 @@
   },
   {
     "title": "Field of Apples",
-    "image": "#",
+    "image": "../../assets/images/home.jpg",
     "description": "Apples everywhere that replenish health",
     "didItHappen":false,
     "events":{"title": "Happy eating", "description": "Eat some apples", "hpChange":30},
@@ -37,7 +37,7 @@
   },
   {
     "title": "Snakes lair",
-    "image": "#",
+    "image": "../../assets/images/home.jpg",
     "description": "Snake choking on an apple",
     "didItHappen":false,
     "events": {"title": "Snake choice", "description": "Bop the snake", "hpChange": 0},
@@ -46,7 +46,7 @@
   },
   {
     "title": "Shores of Smoke",
-    "image": "#",
+    "image": "../../assets/images/home.jpg",
     "description": "You see your friend on the shore",
     "didItHappen":false,
     "events": {"title": "Friend can help", "description": "Ask friend for help", "hpChange": 0},
@@ -55,7 +55,7 @@
   },
   {
     "title": "Brittle Forest",
-    "image": "#",
+    "image": "../../assets/images/home.jpg",
     "description": "forest",
     "didItHappen":false,
     "events": {"title": "Snake choice", "description": "Bop the snake", "hpChange": 0},
@@ -64,7 +64,7 @@
   },
   {
     "title": "Sword",
-    "image": "#",
+    "image": "../../assets/images/home.jpg",
     "description": "Sword",
     "didItHappen":false,
     "events": {"title": "Snake choice", "description": "Bop the snake", "hpChange": 0},
@@ -73,7 +73,7 @@
   },
   {
     "title": "Wings",
-    "image": "#",
+    "image": "../../assets/images/home.jpg",
     "description": "Wings",
     "didItHappen":false,
     "events": {"title": "Snake choice", "description": "Bop the snake", "hpChange": 0},

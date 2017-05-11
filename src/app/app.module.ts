@@ -15,6 +15,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import {TilesService} from './tiles.service';
 import { TileListComponent } from './tile-list/tile-list.component';
 import { TileDetailComponent } from './tile-detail/tile-detail.component';
+import { EventPopUpComponent } from './event-pop-up/event-pop-up.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -31,7 +32,8 @@ export const firebaseConfig = {
     IntroductionComponent,
     HelpComponent,
     TileListComponent,
-    TileDetailComponent
+    TileDetailComponent,
+    EventPopUpComponent
   ],
   imports: [
     CovalentCoreModule,
@@ -43,6 +45,9 @@ export const firebaseConfig = {
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
+  ],
+  entryComponents: [
+    EventPopUpComponent
   ],
   providers: [TilesService],
   bootstrap: [AppComponent]
