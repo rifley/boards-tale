@@ -23,7 +23,7 @@
     <button md-raised-button color="warn" class="btn" *ngIf="!didItHappen && tile?.title !== 'Home'" (click)="checkEvent()"> Explore Your Surroundings </button>
     </md-card-actions>
   </md-card>
-  <h1 *ngIf="eventResolved"> Show after event has resolved</h1>
+  <p *ngIf="eventResolved"> {{tile?.events.description}}</p>
 
   </div>
 </div>

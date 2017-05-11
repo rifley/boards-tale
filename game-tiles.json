@@ -13,7 +13,7 @@
     "image": "../../assets/images/home.jpg",
     "description": "North is riddle and wings, West is home, South is Sword",
     "didItHappen":false,
-    "events":{"title": "TestEvent1", "description":"Attack the bear", "hpChange":-10},
+    "events":{"title": "TestEvent1", "description":"The cave is nearly pitch black as you cautiously enter. You hear a sharp scratching sound that echoes forward from within the cave. As you decide to abandon this spelunking trip, you feel your legs buckle from an outside floor and next thing you know, you are running as fast as you can out of the cave! Lose 10 Hit Points", "hpChange":-10},
     "directions": ["North", "South", "West"],
     "xyString": "32"
   },
