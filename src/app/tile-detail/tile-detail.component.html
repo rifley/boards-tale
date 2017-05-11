@@ -2,7 +2,12 @@
 <h1> {{currentPlayer?.name}}, you are at {{tile?.title}}</h1>
 <h3> You have {{currentPlayer?.hp}} hit points </h3>
 
-<p> {{tile?.events.title}} </p>
+<p> {{tile?.events.description}} </p>
 
-<h3 (click)="exploreSurroundings(direction)" *ngFor="let direction of directions"> {{direction}}</h3>
-<button class="btn" *ngIf="!didItHappen" (click)="checkEvent()"> Explore Your Surroundings </button>
+<!-- <button (click)="exploreSurroundings(tile?.directions[0])" *ngIf="tile?.directions[0] === 'North'"> {{tile?.directions[0]}}</button> -->
+
+<div id="exploreBar">
+  <button md-raised-button color="accent" flex="30" (click)="exploreSurroundings(direction)" *ngFor="let direction of directions" > <md-icon [id]="direction">arrow_forward</md-icon></button>
+</div>
+
+<button class="btn" *ngIf="!didItHappen && tile?.title !== 'Home'" (click)="checkEvent()"> Explore Your Surroundings </button>

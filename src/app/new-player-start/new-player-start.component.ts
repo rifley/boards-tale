@@ -26,10 +26,8 @@ export class NewPlayerStartComponent implements OnInit {
     this.tileService.deleteAllPlayers();
     var resetTiles = this.tileService.getAllTiles().subscribe((tiles) => {
          this.tiles=tiles;
-         console.log("happening");
          resetTiles.unsubscribe();
      });
-
 }
 
   startGame(){

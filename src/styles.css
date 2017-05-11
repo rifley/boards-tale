@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+#North{
+  font-size: 70px;
+  -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+#South{
+  font-size: 70px;
+  -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+#West{
+  font-size: 70px;
+  -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+#East{
+  font-size: 70px;
+
+}
+
+#exploreBar {
+  position: relative;
+
+}

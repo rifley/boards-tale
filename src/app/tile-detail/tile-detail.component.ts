@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { routing } from '../app.routing';
 import { ActivatedRoute, Params } from '@angular/router';
 import {Tile} from '../tile.model';
@@ -27,15 +27,16 @@ export class TileDetailComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((urlParameters)=>{
       this.searchString =urlParameters ['id'];
-      this.tileService.getTileByName(this.searchString).subscribe((tile)=>{
-//setting all tile attributes
+      //setting all tile attributes
+     this.tileService.getTileByName(this.searchString).subscribe((tile)=>{
         this.tile=tile[0];
         this.currentEvent = this.tile.events;
         this.tileCoordinate = this.tile.xyString;
         this.directions = this.tile.directions;
         this.didItHappen = this.tile.didItHappen;
+
 // getting player informaiton
-        this.tileService.getPlayer().subscribe((player)=>{
+        var getPlayerSubscribe = this.tileService.getPlayer().subscribe((player)=>{
         this.currentPlayer = player[0];
       });
     });
@@ -67,10 +68,10 @@ checkEvent (){
       this.exploreHelper(-10);
     }
     if (direction ==="North"){
-      this.exploreHelper(-1);
+      this.exploreHelper(1);
     }
     if (direction ==="South"){
-      this.exploreHelper(1);
+      this.exploreHelper(-1);
     }
   }
 }

@@ -2,47 +2,83 @@
   {
     "title": "Home",
     "image": "#",
-    "description": "beautiful day ",
+    "description": "You wake up to the smell of roasting apples. To the North you see the open field you have spent many days in with your children, enjoying the long green grass etc. To the West you see an old bear sleeping off a hard days eating. To the South you notice a snake having a particularly difficult time eating a banana. To the East you notice a fire and hear screaming. Make your decision!",
     "didItHappen":true,
-    "events":{"title":"Event 1", "description":"No place like home", "hpChange":0},
+    "events":{"title":"Event 1", "description":"Head somewhere!", "hpChange":0},
     "directions": ["North", "South", "East", "West"],
     "xyString": "22"
   },
   {
-    "title": "the Flat Hills",
+    "title": "The Flat Cave",
     "image": "#",
-    "description": "Hills are alive...",
+    "description": "North is riddle and wings, West is home, South is Sword",
     "didItHappen":false,
-    "events":{"title": "TestEvent1", "description":"You lose a leg", "hpChange":-10},
-    "directions": ["West"],
+    "events":{"title": "TestEvent1", "description":"Attack the bear", "hpChange":-10},
+    "directions": ["North", "South", "West"],
     "xyString": "32"
   },
   {
-    "title": "the Brittle Forest",
+    "title": "Burning Town",
     "image": "#",
-    "description": "Hills are alive...",
+    "description": "North is tree and health, south is child, East is home",
     "didItHappen":false,
-    "events":["Event 2"],
-    "directions": ["East"],
+    "events":{"title": "Boss Battle", "description": "Attack the boss", "hpChange":-100},
+    "directions": ["North", "South", "East"],
     "xyString": "12"
   },
   {
-    "title": "the City Of WaterDeep ",
+    "title": "Field of Apples",
     "image": "#",
-    "description": "Hills are alive...",
+    "description": "Apples everywhere that replenish health",
     "didItHappen":false,
-    "events":["Event 2"],
-    "directions": ["South"],
+    "events":{"title": "Happy eating", "description": "Eat some apples", "hpChange":30},
+    "directions": ["South", "East", "West"],
+    "xyString": "23"
+  },
+  {
+    "title": "Snakes lair",
+    "image": "#",
+    "description": "Snake choking on an apple",
+    "didItHappen":false,
+    "events": {"title": "Snake choice", "description": "Bop the snake", "hpChange": 0},
+    "directions": ["North", "East", "West"],
     "xyString": "21"
   },
   {
-    "title": "the Shores Of Smoke ",
+    "title": "Shores of Smoke",
     "image": "#",
-    "description": "Hills are alive...",
+    "description": "You see your friend on the shore",
     "didItHappen":false,
-    "events":["Event 2"],
-    "directions": ["North"],
-    "xyString": "23"
+    "events": {"title": "Friend can help", "description": "Ask friend for help", "hpChange": 0},
+    "directions": ["North", "East"],
+    "xyString": "11"
+  },
+  {
+    "title": "Brittle Forest",
+    "image": "#",
+    "description": "forest",
+    "didItHappen":false,
+    "events": {"title": "Snake choice", "description": "Bop the snake", "hpChange": 0},
+    "directions": ["South", "East"],
+    "xyString": "13"
+  },
+  {
+    "title": "Sword",
+    "image": "#",
+    "description": "Sword",
+    "didItHappen":false,
+    "events": {"title": "Snake choice", "description": "Bop the snake", "hpChange": 0},
+    "directions": ["North" , "West"],
+    "xyString": "31"
+  },
+  {
+    "title": "Wings",
+    "image": "#",
+    "description": "Wings",
+    "didItHappen":false,
+    "events": {"title": "Snake choice", "description": "Bop the snake", "hpChange": 0},
+    "directions": ["South", "West"],
+    "xyString": "33"
   }
 ]
 
