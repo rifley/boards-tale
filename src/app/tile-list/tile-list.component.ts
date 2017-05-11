@@ -17,20 +17,11 @@ export class TileListComponent implements OnInit {
   ngOnInit() {
     this.tileService.getAllTiles().subscribe((tiles) => {
       this.tiles=tiles;
-      console.log(this.tiles);
-
-      var resetArray = this.tiles.map(this.resetEvents);
-      console.log(resetArray);
-
-    });
-
+      });
   }
 
   goHere(tile: Tile) {
     this.router.navigate(['tiles', tile.xyString]);
   }
 
-  resetEvents (tile){
-    console.log(tile.didItHappen);
-  }
 }

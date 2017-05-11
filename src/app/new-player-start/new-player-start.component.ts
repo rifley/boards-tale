@@ -3,6 +3,7 @@ import { Player } from '../player.model';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { routing } from '../app.routing';
 import { Router } from '@angular/router';
+import {Tile} from '../tile.model';
 import {TilesService} from '../tiles.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class NewPlayerStartComponent implements OnInit {
 
   title: string = "A Boards Tale"
   playerForm: FormGroup;
+  tiles: Tile [];
 
   constructor(private tileService: TilesService, private fb: FormBuilder, private router: Router) { }
 
@@ -22,22 +24,22 @@ export class NewPlayerStartComponent implements OnInit {
       name:'',
     });
     this.tileService.deleteAllPlayers();
-  }
+    var resetTiles = this.tileService.getAllTiles().subscribe((tiles) => {
+         this.tiles=tiles;
+         console.log("happening");
+         resetTiles.unsubscribe();
+     });
+
+}
 
   startGame(){
+    this.tiles.map((tile)=>{
+      this.tileService.resetTile(tile);
+    });
     var newPlayer: Player = new Player (this.playerForm.value.name);
-    console.log(newPlayer);
     this.tileService.addPlayer(newPlayer);
     this.playerForm.reset();
     this.router.navigate(['tiles', 'Home']);
   }
-
-  // startGame(){
-  //   var newPlayer: Player = new Player (this.playerForm.value.name);
-  //   localStorage.setItem('newPlayer', JSON.stringify({newPlayer}));
-  //   this.playerForm.reset();
-  //   this.router.navigate(['tiles', 'Home']);
-  //
-  // }
 
 }

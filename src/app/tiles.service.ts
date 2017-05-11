@@ -42,6 +42,11 @@ export class TilesService {
     tileToChange.update({didItHappen: true,});
   }
 
+  resetTile(tile) {
+    var tileToChange = this.getTileByID(tile.$key);
+    tileToChange.update({didItHappen: false,});
+  }
+
   getAllTiles () {
     return this.tiles;
   }
